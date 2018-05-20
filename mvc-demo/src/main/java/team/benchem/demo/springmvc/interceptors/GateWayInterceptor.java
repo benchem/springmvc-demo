@@ -32,6 +32,7 @@ public class GateWayInterceptor implements HandlerInterceptor {
         responseBody.put("httpMethod", httpMethod);
         responseBody.put("servicePath", servicePath);
         responseBody.put("requestBody", requestBody);
+        response.setContentType("application/json");
         response.getWriter().write(responseBody.toJSONString());
         response.getWriter().flush();
 
